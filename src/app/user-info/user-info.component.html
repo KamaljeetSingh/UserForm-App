@@ -1,0 +1,33 @@
+<div class="v-center">
+  <mat-card>
+    <h3>User Form</h3>
+    <form (submit)="onSubmit(userForm)" #userForm="ngForm">
+      <mat-form-field>
+        <input matInput type="text" name="userName" placeholder="Enter Name" minlength="5" [(ngModel)]="user.userName"
+          #nameVal="ngModel" required>
+        <mat-error *ngIf="nameVal.invalid">Please enter name with length > 5</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="date" name="dob" placeholder="Enter DOB" [(ngModel)]="user.userDob" (ngModelChange)="onChangeDob()"
+          #dobVal="ngModel" required>
+        <mat-error *ngIf="dobVal.invalid">Please enter correct dob.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="email" placeholder="Enter Email" [(ngModel)]="user.email" #emailVal="ngModel"
+          required email>
+        <mat-error *ngIf="emailVal.invalid">Please enter valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" name="age" placeholder="Enter Age" [(ngModel)]="user.age" min="18" (ngModelChange)="onChangeAge()"
+          #ageVal="ngModel" required>
+        <mat-error *ngIf="ageVal.invalid">Age must be greater than 18.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="phone" placeholder="Enter Phone Number" [(ngModel)]="user.phone"
+          #phoneVal="ngModel" required>
+          <mat-error *ngIf="emailVal.invalid">Please enter phone number.</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+  </mat-card>
+</div>
