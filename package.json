@@ -23,7 +23,7 @@
     "@angular/router": "~7.2.0",
     "body-parser": "^1.19.0",
     "core-js": "^2.5.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemailer": "^6.2.1",
     "phone": "^2.3.13",
     "rxjs": "~6.3.3",
